@@ -4,7 +4,7 @@ const {prefix, token}= require ('./config.json');
 
  const client = new Discord.Client(); 
 
- client.once('ready',() => {
+ client.on('ready',() => {
      console.log('Ready ');
      client.user.setStatus("dnd");
      setTimeout(() => {
@@ -12,7 +12,7 @@ const {prefix, token}= require ('./config.json');
     },100)
 });
 
-client.once('message',(message) => {
+client.on('message',(message) => {
     if(message.content === `!ping`){
         message.channel.send('pong');
     }
