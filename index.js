@@ -17,24 +17,25 @@ client.on('message',(message) => {
     const command = args.shift().toLowerCase();
 
 
-    if(command === `!ping`){
+    if(command === `ping`){
         message.channel.send('pong');
     }
-    else if(command === `!serveur`){
+    else if(command === `serveur`){
         message.channel.send(`Nom du serveur : ${message.guild.name}\n Nombre d'utilisateurs : ${message.guild.memberCount}`);
     }
     else if(command === `update`){
         message.channel.send(`Le Bot est développé par Kaellyt, il sera mis à jour progressivement :blush:`);
     }
-    else if(message.content === `!point`){
+    else if(message.content === `point`){
+
         if(!message.mentions.users.size){
-            return message.channel.send(`Vous ne pouvez pas vous attribuer personnellement des points`);
+            return message.channel.send(`Vous ne pouvez pas vous attribuer de point`);
         }
-        const mentionsListe = message.mentions.users.map(user => {
+        const mentionListe = message.mentions.users.map(user => {
             return `${user.username} vient de gagner un point.`;
         });
 
-        message.channel.end(mentionsListe);
+        message.channel.send(mentionListe);
     }
 });
 
