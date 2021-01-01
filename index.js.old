@@ -13,7 +13,7 @@ const {prefix, token}= require ('./config.json');
 });
 
 client.once('message',(message) => {
-    if(message.content === `!ping`){
+    if(message.content === `${prefix}ping`){
         message.channel.send('pong');
     }
 });
