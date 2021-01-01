@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
   
-const {prefix, token}= require ('./config.json');
+const {token}= require ('./config.json');
 
  const client = new Discord.Client(); 
 
@@ -13,13 +13,18 @@ const {prefix, token}= require ('./config.json');
 });
 
 client.on('message',(message) => {
-    if(message.content === `!ping`){
+
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+
+    if(command === `!ping`){
         message.channel.send('pong');
     }
-    else if(message.content === `!serveur`){
+    else if(command === `!serveur`){
         message.channel.send(`Nom du serveur : ${message.guild.name}\n Nombre d'utilisateurs : ${message.guild.memberCount}`);
     }
-    else if(message.content === `!update`){
+    else if(command === `update`){
         message.channel.send(`Le Bot est développé par Kaellyt, il sera mis à jour progressivement :blush:`);
     }
     else if(message.content === `!point`){
