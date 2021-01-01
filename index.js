@@ -17,7 +17,7 @@ client.once('message',(message) => {
         message.channel.send('pong');
     }
     else if(message.content === `!serveur`){
-        message.channel.send(`Nom du serveur : ${message.guild.name}\n Nombre d'utilisateurs : ${message.guild.membersCount}`);
+        message.channel.send(`Nom du serveur : ${message.guild.name}\n Nombre d'utilisateurs : ${message.guild.memberCount}`);
     }
     else if(message.content === `!update`){
         message.channel.send(`Le Bot est développé par Kaellyt, il sera mis à jour progressivement :blush:`);
