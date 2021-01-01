@@ -20,7 +20,7 @@ client.once('message',(message) => {
         message.channel.send(`Nom du serveur : ${message.guild.name}\n Nombre d'utilisateurs : ${message.guild.membersCount}`);
     }
     else if(message.content === `!update`){
-        message.channel.send(`Le Bot est développé par Kaellyt, une sera mis à jour progressivement :blush:`);
+        message.channel.send(`Le Bot est développé par Kaellyt, il sera mis à jour progressivement :blush:`);
     }
     else if(message.content === `!point`){
         if(!message.mentions.users.size){
