@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
   
-const {token}= require ('./config.json');
+const {prefix}= require ('./config.json');
+const client = new Discord.Client(); 
 
- const client = new Discord.Client(); 
-
- client.on('ready',() => {
+client.on('ready',() => {
      console.log('Ready ');
      client.user.setStatus("dnd");
      setTimeout(() => {
